@@ -1,8 +1,10 @@
-package com.mak.studytracker;
+package com.mak.studytracker.firebaseauthdemo;
 
 import android.app.ProgressDialog;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
+
+import com.mak.studytracker.R;
 
 public class BaseActivity extends AppCompatActivity {
 

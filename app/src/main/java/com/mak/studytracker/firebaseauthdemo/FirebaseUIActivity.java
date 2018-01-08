@@ -1,7 +1,9 @@
-package com.mak.studytracker;
+package com.mak.studytracker.firebaseauthdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.mak.studytracker.R;
 
 public class FirebaseUIActivity extends AppCompatActivity {
 

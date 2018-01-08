@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mak.studytracker;
+package com.mak.studytracker.firebaseauthdemo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +27,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.mak.studytracker.R;
 
 /**
  * Simple list-based Activity to redirect to one of the other Activities. This Activity does not

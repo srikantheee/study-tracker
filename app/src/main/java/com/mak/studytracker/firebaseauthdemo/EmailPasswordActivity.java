@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mak.studytracker;
+package com.mak.studytracker.firebaseauthdemo;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -30,6 +30,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.mak.studytracker.R;
 
 public class EmailPasswordActivity extends BaseActivity implements
         View.OnClickListener {

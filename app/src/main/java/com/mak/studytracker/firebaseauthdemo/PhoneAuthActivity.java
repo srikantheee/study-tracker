@@ -1,4 +1,4 @@
-package com.mak.studytracker;
+package com.mak.studytracker.firebaseauthdemo;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.mak.studytracker.R;
 
 import java.util.concurrent.TimeUnit;
 

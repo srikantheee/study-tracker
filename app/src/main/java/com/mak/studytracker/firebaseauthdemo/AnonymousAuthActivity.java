@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mak.studytracker;
+package com.mak.studytracker.firebaseauthdemo;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -32,6 +32,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.mak.studytracker.R;
 
 /**
  * Activity to demonstrate anonymous login and account linking (with an email/password account).

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mak.studytracker;
+package com.mak.studytracker.firebaseauthdemo;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
