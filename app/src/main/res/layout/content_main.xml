@@ -18,6 +18,24 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:text="Please add some subjects by pressing + button"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/progress_button"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/notifications_button"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/add_subjects_button"
+            />
     </LinearLayout>
 
 </ScrollView>
