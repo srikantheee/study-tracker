@@ -83,4 +83,5 @@
     <string name="title_subject_list">Subjects</string>
     <string name="title_subject_detail">Subject Detail</string>
     <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="title_activity_progress">ProgressActivity</string>
 </resources>

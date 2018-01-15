@@ -1,5 +1,6 @@
 package com.mak.studytracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,10 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.mak.studytracker.input.AddSubjectActivity;
+import com.mak.studytracker.notifications.NotificationsActivity;
+import com.mak.studytracker.progress.ProgressActivity;
+
+import com.mak.studytracker.schedule.ScheduleActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,11 +37,42 @@ private FirebaseAuth mAuth;
         TextView myText=(TextView)findViewById(R.id.mytext);
         String temp="Hello hari priya\n Hello Jyothsna\n";
         String t=temp;
-        for (int i=0;i<7;i++){
-              temp=t+temp;
-        }
+
 
         myText.setText(temp);
+        Button addSubjectButton=(Button)findViewById(R.id.add_subjects_button);
+        Button notificationsButton=(Button)findViewById(R.id.notifications_button);
+        Button progressButton=(Button)findViewById(R.id.progress_button);
+        Button scheduleButton=(Button)findViewById(R.id.schedule_button);
+        addSubjectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, AddSubjectActivity.class);
+                startActivity(intent);
+            }
+        });
+        notificationsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, NotificationsActivity.class);
+                startActivity(intent);
+            }
+        });
+        progressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, ProgressActivity.class);
+                startActivity(intent);
+            }
+        });
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, ScheduleActivity.class);
+                startActivity(intent);
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +100,7 @@ private FirebaseAuth mAuth;
     }
     private void updateUI(FirebaseUser currentUser){
         TextView myText=(TextView)findViewById(R.id.mytext);
-        myText.setText(currentUser.getEmail()+ " is the email of Sri "+currentUser.getDisplayName());
+//        myText.setText(currentUser.getEmail()+ " is the email of Sri "+currentUser.getDisplayName());
     }
     @Override
     public void onBackPressed() {

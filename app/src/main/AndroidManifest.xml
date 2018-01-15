@@ -72,8 +72,8 @@
                 android:value="com.mak.studytracker.MainActivity" />
         </activity>
         <activity
-            android:name=".progress.SubjectListActivity"
-            android:label="@string/title_subject_list"
+            android:name=".schedule.ScheduleActivity"
+            android:label="@string/title_activity_schedule"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -81,17 +81,8 @@
                 android:value="com.mak.studytracker.MainActivity" />
         </activity>
         <activity
-            android:name=".progress.SubjectDetailActivity"
-            android:label="@string/title_subject_detail"
-            android:parentActivityName=".progress.SubjectListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mak.studytracker.progress.SubjectListActivity" />
-        </activity>
-        <activity
-            android:name=".schedule.ScheduleActivity"
-            android:label="@string/title_activity_schedule"
+            android:name=".progress.ProgressActivity"
+            android:label="@string/title_activity_progress"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
