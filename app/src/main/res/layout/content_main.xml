@@ -34,7 +34,7 @@ android:text="Notifications"
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-android:text="Progress"
+android:text="Input"
             android:id="@+id/add_subjects_button"
             />
         <Button

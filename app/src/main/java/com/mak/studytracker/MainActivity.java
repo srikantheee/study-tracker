@@ -35,6 +35,9 @@ private FirebaseAuth mAuth;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView myText=(TextView)findViewById(R.id.mytext);
+
+
+
         String temp="Hello hari priya\n Hello Jyothsna\n";
         String t=temp;
 
