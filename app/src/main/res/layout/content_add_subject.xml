@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mak.studytracker.input.AddSubjectActivity"
+    tools:context=".activities.input.AddSubjectActivity"
     tools:showIn="@layout/activity_add_subject">
 
     <LinearLayout

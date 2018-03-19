@@ -1,11 +1,10 @@
-package com.mak.studytracker.input;
+package com.mak.studytracker.activities.input;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,6 +15,8 @@ import com.mak.studytracker.R;
 public class AddSubjectActivity extends AppCompatActivity {
 
     private static final String TAG = "addsubjectkhuddus" ;
+    private Button submitButton;
+    private DatePicker targetDate;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -24,8 +25,8 @@ public class AddSubjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_subject);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final DatePicker targetDate=(DatePicker)findViewById(R.id.target_date);
-        Button submitButton = (Button)findViewById(R.id.button_submit);
+          targetDate=(DatePicker)findViewById(R.id.target_date);
+       submitButton = (Button)findViewById(R.id.button_submit);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,4 +1,4 @@
-package com.mak.studytracker.notifications;
+package com.mak.studytracker.activities.notifications;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

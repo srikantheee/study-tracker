@@ -18,11 +18,11 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.mak.studytracker.input.AddSubjectActivity;
-import com.mak.studytracker.notifications.NotificationsActivity;
-import com.mak.studytracker.progress.ProgressActivity;
+import com.mak.studytracker.activities.input.AddSubjectActivity;
+import com.mak.studytracker.activities.notifications.NotificationsActivity;
+import com.mak.studytracker.activities.progress.ProgressActivity;
 
-import com.mak.studytracker.schedule.ScheduleActivity;
+import com.mak.studytracker.activities.schedule.ScheduleActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

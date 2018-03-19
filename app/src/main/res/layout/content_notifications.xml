@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mak.studytracker.notifications.NotificationsActivity"
+    tools:context=".activities.notifications.NotificationsActivity"
     tools:showIn="@layout/activity_notifications">
 
 </android.support.constraint.ConstraintLayout>

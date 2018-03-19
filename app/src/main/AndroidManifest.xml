@@ -19,42 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".firebaseauthdemo.ChooserActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
-        <activity
-            android:name=".firebaseauthdemo.CustomAuthActivity"
-            android:label="@string/label_custom_auth" />
-        <activity
-            android:name=".firebaseauthdemo.GoogleSignInActivity"
-            android:label="@string/label_google_sign_in" />
-        <activity
-            android:name=".firebaseauthdemo.FacebookLoginActivity"
-            android:label="@string/label_facebook_login" />
-        <activity
-            android:name=".firebaseauthdemo.EmailPasswordActivity"
-            android:label="@string/label_emailpassword"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
-            android:name=".firebaseauthdemo.PhoneAuthActivity"
-            android:label="@string/label_phone_auth" />
-        <activity
-            android:name=".firebaseauthdemo.AnonymousAuthActivity"
-            android:label="@string/label_anonymous_auth" />
-        <activity
-            android:name=".firebaseauthdemo.TwitterLoginActivity"
-            android:label="@string/label_twitter_login" />
-        <activity
-            android:name=".firebaseauthdemo.FirebaseUIActivity"
-            android:label="@string/label_firebase_ui" />
-        <activity
-            android:name=".input.AddSubjectActivity"
+               <activity
+            android:name=".activities.input.AddSubjectActivity"
             android:label="@string/title_activity_add_subject"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -63,7 +30,7 @@
                 android:value="com.mak.studytracker.MainActivity" />
         </activity>
         <activity
-            android:name=".notifications.NotificationsActivity"
+            android:name=".activities.notifications.NotificationsActivity"
             android:label="@string/title_activity_notifications"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -72,7 +39,7 @@
                 android:value="com.mak.studytracker.MainActivity" />
         </activity>
         <activity
-            android:name=".schedule.ScheduleActivity"
+            android:name=".activities.schedule.ScheduleActivity"
             android:label="@string/title_activity_schedule"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -81,7 +48,7 @@
                 android:value="com.mak.studytracker.MainActivity" />
         </activity>
         <activity
-            android:name=".progress.ProgressActivity"
+            android:name=".activities.progress.ProgressActivity"
             android:label="@string/title_activity_progress"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

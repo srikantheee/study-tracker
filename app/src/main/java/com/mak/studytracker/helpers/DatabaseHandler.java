@@ -75,7 +75,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + SUBJECT_TARGET_DATE + " INTEGER,"
                 + SUBJECT_BEGIN_DATE + " TEXT,"
                 + SUBJECT_SELECTED_DAYS + " TEXT,"
-                + SUBJECT_CURRENT_PROGRESS + " TEXT,"
+                + SUBJECT_CURRENT_PROGRESS + " TEXT"
 
                 + ")";
         db.execSQL(CREATE_POSTS_TABLE);
