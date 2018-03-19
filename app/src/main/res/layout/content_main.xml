@@ -12,37 +12,37 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
->
-     <TextView
-         android:id="@+id/mytext"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="Please add some subjects by pressing + button"/>
-        <Button
-            android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mytext"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-android:text="Progress"
+            android:text="Please add some subjects by pressing + button" />
+
+        <Button
             android:id="@+id/progress_button"
-            />
-        <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-android:text="Notifications"
+            android:text="Progress" />
+
+        <Button
             android:id="@+id/notifications_button"
-            />
-        <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-android:text="Input"
+            android:text="Notifications" />
+
+        <Button
             android:id="@+id/add_subjects_button"
-            />
-        <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-android:text="Schedule"
+            android:text="Input" />
+
+        <Button
             android:id="@+id/schedule_button"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule" />
     </LinearLayout>
 
 </ScrollView>
