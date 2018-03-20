@@ -8,7 +8,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.schedule.ScheduleActivity"
     tools:showIn="@layout/activity_schedule">
+
     <LinearLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -31,7 +33,35 @@
             android:text="kljfs"
             android:textIsSelectable="true" />
 
+        <TextView
+            android:id="@+id/subject_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-       </LinearLayout>
+            android:layout_margin="@dimen/text_margin"
+            android:text="kljfs"
+            android:textIsSelectable="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/update_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Progress" />
+
+            <Button
+                android:id="@+id/calendar_events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mark Events on Calendar" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

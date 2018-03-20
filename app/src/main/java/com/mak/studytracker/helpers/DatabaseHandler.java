@@ -239,6 +239,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     // Updating single like
+    public int updateSubjectProgress(Subject subject,int updateValue) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+
+        values.put(SUBJECT_CURRENT_PROGRESS, (subject.getCurrentProgress()+updateValue));
+
+
+        // updating row
+        return db.update(TABLE_SUBJECTS, values, SUBJECT_ID + " = ?",
+                new String[]{String.valueOf(subject.getId())});
+    }
+
+    // Updating single like
     public int updateSubject(Subject subject) {
         SQLiteDatabase db = this.getWritableDatabase();
 

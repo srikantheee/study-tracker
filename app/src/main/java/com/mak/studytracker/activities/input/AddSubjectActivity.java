@@ -97,7 +97,7 @@ public class AddSubjectActivity extends AppCompatActivity {
                                 friday.isChecked(),
                                 saturday.isChecked()
                         ),
-                        6
+                        0
                         ));
                 onBackPressed();
 //                Intent intent=new Intent(AddSubjectActivity.this,ProgressActivity.class);
