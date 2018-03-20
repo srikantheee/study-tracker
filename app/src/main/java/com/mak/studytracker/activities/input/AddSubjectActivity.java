@@ -54,10 +54,10 @@ public class AddSubjectActivity extends AppCompatActivity {
         targetDate = (DatePicker) findViewById(R.id.target_date);
         submitButton = (Button) findViewById(R.id.button_submit);
         subjectNameEditText = (EditText) findViewById(R.id.subject_name);
-        subjectUnitRadio = (RadioGroup) findViewById(R.id.subject_unit);
-        radioPages = (RadioButton) findViewById(R.id.radioPages);
-        radioQuestions = (RadioButton) findViewById(R.id.radioQuestions);
-        radioLessons = (RadioButton) findViewById(R.id.radioLessons);
+//        subjectUnitRadio = (RadioGroup) findViewById(R.id.subject_unit);
+//        radioPages = (RadioButton) findViewById(R.id.radioPages);
+//        radioQuestions = (RadioButton) findViewById(R.id.radioQuestions);
+//        radioLessons = (RadioButton) findViewById(R.id.radioLessons);
         unitsValueEditText = (EditText) findViewById(R.id.units_value);
         sunday=(CheckBox)findViewById(R.id.sunday);
         monday=(CheckBox)findViewById(R.id.monday);

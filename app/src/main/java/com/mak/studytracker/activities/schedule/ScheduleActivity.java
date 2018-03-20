@@ -163,13 +163,13 @@ loadData();
                         + "<br>Selected Days : " +(subject.getSelectedDaysOutput())
                         + "<br>Total no. of weeks to study : " +(Subject.getNoOfWeeks(subject.getBeginDate(),subject.getTargetDate()))
                         + "<br>Remaining no. of weeks to study : " +(Subject.getNoOfWeeks( new SimpleDateFormat("dd-MM-yyyy").format(new Date()).toString(),subject.getTargetDate()))
-                        + "<br>Units per each sitting : " +(subject.unitsPerEachSitting())
+                        + "<br>Pages per each sitting : " +(subject.unitsPerEachSitting())
         ));
         if (subject.getCurrentProgress()>=subject.estimatedCompletion()){
             subjectWarning.setText(Html.fromHtml(
                     " Well done. You're going ahead of "
                             +(subject.getCurrentProgress()-subject.estimatedCompletion())
-                            +" units."
+                            +" pages."
             ));
 
 
@@ -178,7 +178,7 @@ loadData();
             subjectWarning.setText(Html.fromHtml(
                     " You need to improve. You're lagging "
                             +(subject.estimatedCompletion()-subject.getCurrentProgress())
-                            +" units."
+                            +" pages."
             ));
 
         }
