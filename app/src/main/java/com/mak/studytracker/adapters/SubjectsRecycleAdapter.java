@@ -57,7 +57,7 @@ public class SubjectsRecycleAdapter extends RecyclerView.Adapter<SubjectsRecycle
         holder.titleText.setText(Html.fromHtml(subjectList.get(position).getName()));
         holder.contentText.setText(Html.fromHtml(
                 "<b><big> Target Date :</big></b> " + subjectList.get(position).getTargetDate()
-                        + "<br>Remaining Units :</big></b> " +(subjectList.get(position).getUnitsValue()- subjectList.get(position).getCurrentProgress())
+                        + "<br>Remaining Pages :</big></b> " +(subjectList.get(position).getUnitsValue()- subjectList.get(position).getCurrentProgress())
                 )
         )        ;
         ;

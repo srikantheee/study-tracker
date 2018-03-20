@@ -29,10 +29,10 @@ public class AddSubjectActivity extends AppCompatActivity {
     private Button submitButton;
     private DatePicker targetDate;
     private EditText subjectNameEditText;
-    private RadioGroup subjectUnitRadio;
-    private RadioButton radioLessons;
-    private RadioButton radioQuestions;
-    private RadioButton radioPages;
+//    private RadioGroup subjectUnitRadio;
+//    private RadioButton radioLessons;
+//    private RadioButton radioQuestions;
+//    private RadioButton radioPages;
     private RadioButton selectedUnit;
     private EditText unitsValueEditText;
     private DatabaseHandler databaseHandler;
@@ -71,9 +71,9 @@ public class AddSubjectActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int selectedId = subjectUnitRadio.getCheckedRadioButtonId();
-                selectedUnit = (RadioButton) findViewById(selectedId);
-                Toast.makeText(AddSubjectActivity.this, selectedUnit.getText(), Toast.LENGTH_SHORT).show();
+//                int selectedId = subjectUnitRadio.getCheckedRadioButtonId();
+//                selectedUnit = (RadioButton) findViewById(selectedId);
+//                Toast.makeText(AddSubjectActivity.this, selectedUnit.getText(), Toast.LENGTH_SHORT).show();
 
                 // get the values for day of month , month and year from a date picker
                 String day = "Day = " + targetDate.getDayOfMonth();
@@ -84,7 +84,7 @@ public class AddSubjectActivity extends AppCompatActivity {
                 databaseHandler.addSubject(new Subject(
                         1,
                         subjectNameEditText.getText().toString(),
-                        selectedUnit.getText().toString(),
+                        "pages",
                         Integer.parseInt(unitsValueEditText.getText().toString()),
                         new SimpleDateFormat("dd-MM-yyyy").format(new Date()).toString(),
                         Subject.combineDate(targetDate.getDayOfMonth(),targetDate.getMonth(),targetDate.getYear()),
@@ -101,7 +101,7 @@ public class AddSubjectActivity extends AppCompatActivity {
                         ));
                 onBackPressed();
 //                Intent intent=new Intent(AddSubjectActivity.this,ProgressActivity.class);
-                Toast.makeText(getApplicationContext(), day + "\n" + month + "\n" + year, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),   "Subject Added"  , Toast.LENGTH_LONG).show();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
