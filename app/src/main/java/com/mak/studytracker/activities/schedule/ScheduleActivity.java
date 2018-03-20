@@ -156,10 +156,10 @@ loadData();
         subjectContent.setText(Html.fromHtml(
                 "<b><big> Target Date :</big></b> " + subject.getTargetDate()
                         + "<br>Begining Date : " +(subject.getBeginDate())
-                        + "<br>Total Units : " +(subject.getUnitsValue())
-                        + "<br>Completed Units : " +(  subject.getCurrentProgress())
+                        + "<br>Total Pages : " +(subject.getUnitsValue())
+                        + "<br>Completed Pages : " +(  subject.getCurrentProgress())
                         + "<br>Estimated Completion : " +(  subject.estimatedCompletion())
-                        + "<br>Remaining Units : " +(subject.getUnitsValue()- subject.getCurrentProgress())
+                        + "<br>Remaining Pages : " +(subject.getUnitsValue()- subject.getCurrentProgress())
                         + "<br>Selected Days : " +(subject.getSelectedDaysOutput())
                         + "<br>Total no. of weeks to study : " +(Subject.getNoOfWeeks(subject.getBeginDate(),subject.getTargetDate()))
                         + "<br>Remaining no. of weeks to study : " +(Subject.getNoOfWeeks( new SimpleDateFormat("dd-MM-yyyy").format(new Date()).toString(),subject.getTargetDate()))

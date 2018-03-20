@@ -87,7 +87,7 @@ public class AddSubjectActivity extends AppCompatActivity {
                         "pages",
                         Integer.parseInt(unitsValueEditText.getText().toString()),
                         new SimpleDateFormat("dd-MM-yyyy").format(new Date()).toString(),
-                        Subject.combineDate(targetDate.getDayOfMonth(),targetDate.getMonth(),targetDate.getYear()),
+                        Subject.combineDate(targetDate.getDayOfMonth(),(targetDate.getMonth() + 1),targetDate.getYear()),
                         Subject.buildSelectedDays(
                                 sunday.isChecked(),
                                 monday.isChecked(),
