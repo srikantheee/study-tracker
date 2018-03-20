@@ -60,25 +60,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_BLOGS_TABLE = "CREATE TABLE " + TABLE_BLOGS + "("
-                + BLOG_ID + " TEXT PRIMARY KEY,"
-                + BLOG_UPDATED + " TEXT"
 
-
-                + ")";
-        db.execSQL(CREATE_BLOGS_TABLE);
-        String CREATE_POSTS_TABLE = "CREATE TABLE " + TABLE_SUBJECTS + "("
-                + SUBJECT_ID + " TEXT PRIMARY KEY,"
+        String CREATE_SUBJECTS_TABLE = "CREATE TABLE " + TABLE_SUBJECTS + "("
+                + SUBJECT_ID + " INTEGER PRIMARY KEY   AUTOINCREMENT,"
                 + SUBJECT_NAME + " TEXT,"
                 + SUBJECT_UNITS_NAME + " TEXT,"
-                + SUBJECT_UNITS_VALUE + " TEXT,"
-                + SUBJECT_TARGET_DATE + " INTEGER,"
+                + SUBJECT_UNITS_VALUE + " INTEGER,"
+                + SUBJECT_TARGET_DATE + " TEXT,"
                 + SUBJECT_BEGIN_DATE + " TEXT,"
                 + SUBJECT_SELECTED_DAYS + " TEXT,"
-                + SUBJECT_CURRENT_PROGRESS + " TEXT"
+                + SUBJECT_CURRENT_PROGRESS + " INTEGER"
 
                 + ")";
-        db.execSQL(CREATE_POSTS_TABLE);
+        db.execSQL(CREATE_SUBJECTS_TABLE);
         String CREATE_LABELS_TABLE = "CREATE TABLE " + TABLE_LABELS + "("
                 + LABEL_ID + " INTEGER PRIMARY KEY  AUTOINCREMENT,"
                 + LABEL_NAME + " TEXT"
@@ -157,19 +151,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(SUBJECT_ID, subject.getId()); // Like Name
-        values.put(SUBJECT_NAME, subject.getName());
+         values.put(SUBJECT_NAME, subject.getName());
         values.put(SUBJECT_UNITS_NAME, subject.getUnitsName());
         values.put(SUBJECT_UNITS_VALUE, subject.getUnitsValue());
-        try {
-            values.put(SUBJECT_TARGET_DATE, ISO8601Utils.parse(subject.getUnitsValue(), new ParsePosition(0)).getTime());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        values.put(SUBJECT_BEGIN_DATE, subject.getBeginDate());
-        values.put(SUBJECT_SELECTED_DAYS, subject.getTargetDate());
-        values.put(SUBJECT_CURRENT_PROGRESS, subject.getSelectedDays());
+        values.put(SUBJECT_TARGET_DATE, subject.getTargetDate());
 
+
+        values.put(SUBJECT_BEGIN_DATE, subject.getBeginDate());
+        values.put(SUBJECT_SELECTED_DAYS, subject.getSelectedDays());
+        values.put(SUBJECT_CURRENT_PROGRESS, subject.getCurrentProgress());
 
         // Inserting Row
         db.insert(TABLE_SUBJECTS, null, values);
@@ -177,8 +167,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-    // Getting single like
-    public Subject getSubject(String id) {
+    // Getting single subject
+    public Subject getSubject(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_SUBJECTS, new String[]{
@@ -193,20 +183,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
                 }, SUBJECT_ID + "=?",
-                new String[]{id}, null, null, null, null);
+                new String[]{id+""}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
         ArrayList<String> labels = new ArrayList<>();
         labels.add("klsdaf");
         Subject subject = new Subject(
-                cursor.getString(0),
+                cursor.getInt(0),
                 cursor.getString(1),
                 cursor.getString(2),
-                cursor.getString(3),
+                cursor.getInt(3),
                 cursor.getString(4),
                 cursor.getString(5),
                 cursor.getString(6),
-                cursor.getString(7)
+                cursor.getInt(7)
           );
         cursor.close();
         db.close();
@@ -229,17 +219,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             do {
                 Subject subject = new Subject();
 
-                subject.setId(cursor.getString(cursor.getColumnIndex(SUBJECT_ID)));
+                subject.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SUBJECT_ID))));
                 subject.setName(cursor.getString(cursor.getColumnIndex(SUBJECT_NAME)));
                 subject.setUnitsName(cursor.getString(cursor.getColumnIndex(SUBJECT_UNITS_NAME)));
-                subject.setUnitsValue(cursor.getString(cursor.getColumnIndex(SUBJECT_UNITS_VALUE)));
+                subject.setUnitsValue(cursor.getInt(cursor.getColumnIndex(SUBJECT_UNITS_VALUE)));
                 subject.setBeginDate(cursor.getString(cursor.getColumnIndex(SUBJECT_BEGIN_DATE)));
-                subject.setTargetDate(cursor.getString(cursor.getColumnIndex(SUBJECT_SELECTED_DAYS)));
-                subject.setSelectedDays(cursor.getString(cursor.getColumnIndex(SUBJECT_CURRENT_PROGRESS)));
-                 String displayText;
-                int start=0;
-
-                  Log.d("Book Number ", cursor.getString(cursor.getColumnIndex(SUBJECT_CURRENT_PROGRESS)) + "");
+                subject.setTargetDate(cursor.getString(cursor.getColumnIndex(SUBJECT_TARGET_DATE)));
+                subject.setCurrentProgress(cursor.getInt(cursor.getColumnIndex(SUBJECT_CURRENT_PROGRESS)));
+                subject.setSelectedDays(cursor.getString(cursor.getColumnIndex(SUBJECT_SELECTED_DAYS)));
                 // Adding like to list
                 subjectList.add(subject);
             } while (cursor.moveToNext());
@@ -252,7 +239,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     // Updating single like
-    public int updatePost(Subject subject) {
+    public int updateSubject(Subject subject) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -260,14 +247,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(SUBJECT_NAME, subject.getName());
         values.put(SUBJECT_UNITS_NAME, subject.getUnitsName());
         values.put(SUBJECT_UNITS_VALUE, subject.getUnitsValue());
-        try {
-            values.put(SUBJECT_TARGET_DATE, ISO8601Utils.parse(subject.getUnitsValue(), new ParsePosition(0)).getTime());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+
         values.put(SUBJECT_BEGIN_DATE, subject.getBeginDate());
-        values.put(SUBJECT_SELECTED_DAYS, subject.getTargetDate());
-        values.put(SUBJECT_CURRENT_PROGRESS, subject.getSelectedDays());
+        values.put(SUBJECT_TARGET_DATE, subject.getTargetDate());
+        values.put(SUBJECT_SELECTED_DAYS, subject.getSelectedDays());
+        values.put(SUBJECT_CURRENT_PROGRESS, subject.getCurrentProgress());
 
 
         // updating row

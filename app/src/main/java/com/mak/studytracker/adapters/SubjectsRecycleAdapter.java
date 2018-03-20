@@ -25,18 +25,19 @@ public class SubjectsRecycleAdapter extends RecyclerView.Adapter<SubjectsRecycle
     private Typeface face;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView contentText, titleText ;
+        public TextView contentText, titleText;
 
 
         public MyViewHolder(View view) {
             super(view);
-            contentText= (TextView) view.findViewById(R.id.blog_content_text);
+            contentText = (TextView) view.findViewById(R.id.blog_content_text);
             titleText = (TextView) view.findViewById(R.id.blog_title_text);
 
         }
     }
+
     public SubjectsRecycleAdapter(Context context, List<Subject> subjectList) {
-        this.mContext=context;
+        this.mContext = context;
         this.subjectList = subjectList;
     }
 
@@ -50,13 +51,16 @@ public class SubjectsRecycleAdapter extends RecyclerView.Adapter<SubjectsRecycle
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Subject subject= subjectList.get(position);
- //        face= Typeface.createFromAsset(mContext.getAssets(),sharedPreferences.getString(UserSharedPreferencesHelper.FONT_LOCATION_KEY,UserSharedPreferencesHelper.LOCATION_NEWSHUNT));
-        holder.contentText.setText(Html.fromHtml(subjectList.get(position).getName() ));;
+        Subject subject = subjectList.get(position);
+        //        face= Typeface.createFromAsset(mContext.getAssets(),sharedPreferences.getString(UserSharedPreferencesHelper.FONT_LOCATION_KEY,UserSharedPreferencesHelper.LOCATION_NEWSHUNT));
 
-        holder.titleText.setText(Html.fromHtml("<b><big>"
-//                +subjectList.get(position).getBookNumber()
-                +"</big></b> "+ subjectList.get(position).getName()));
+        holder.titleText.setText(Html.fromHtml(subjectList.get(position).getName()));
+        holder.contentText.setText(Html.fromHtml(
+                "<b><big> Target Date :</big></b> " + subjectList.get(position).getTargetDate()
+                        + "<br>Remaining Units :</big></b> " +(subjectList.get(position).getUnitsValue()- subjectList.get(position).getCurrentProgress())
+                )
+        )        ;
+        ;
 //        holder.titleText.setTypeface(face);
 //        holder.titleText.setTextSize(sharedPreferences.getFloat(UserSharedPreferencesHelper.FONT_SIZE_KEY, UserSharedPreferencesHelper.FONT_SIZE_DEFAULT)+5);
 

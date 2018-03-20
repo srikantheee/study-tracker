@@ -106,7 +106,7 @@ public class ProgressActivity extends AppCompatActivity {
             public void onClick(View view, int position) {
                 Subject subject = subjects.get(position);
                 Intent intent = new Intent(ProgressActivity.this, ScheduleActivity.class);
-                intent.putExtra("post_id", subjects.get(position).getId());
+                intent.putExtra("subject_id", subjects.get(position).getId());
                 startActivity(intent);
 
 //                Toast.makeText(getApplicationContext(), post.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();

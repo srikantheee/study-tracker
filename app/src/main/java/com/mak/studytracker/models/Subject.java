@@ -1,24 +1,52 @@
 package com.mak.studytracker.models;
 
-import java.util.ArrayList;
-
 /**
  * Created by itdev-8 on 4/3/16.
  */
 public class Subject {
     private   String name;
     private String kind;
-    private String id;
+    private int id;
 
     private String unitsName;
-    private String unitsValue;
+    private int unitsValue;
     private String beginDate;
     private String targetDate;
     private String selectedDays;
+    private String[] days={"Sun","Mon","Tues","Wed","Thu","Fri","Sat"};
+    public String getSelectedDaysOutput() {
+        String str[] = selectedDays.split("-");
+        String output="| ";
+        for (int i=0;i<str.length;i++){
+            if(Boolean.parseBoolean(str[i])){
+                output=output+days[i]+" | ";
+            }
+        }
+        return output;
+    }
+
+
 
     public static   String combineDate(int day, int month, int year){
        return day+"-"+month+"-"+year;
 
+    }
+    public static String buildSelectedDays(
+            boolean sunday,
+            boolean monday,
+            boolean tuesday,
+            boolean wednesday,
+            boolean thursday,
+            boolean friday,
+            boolean saturday
+    ){
+        return sunday
+                +"-"+monday
+                +"-"+tuesday
+                +"-"+wednesday
+                +"-"+thursday
+                +"-"+friday
+                +"-"+saturday;
     }
     public static int getDay(String Date){
         String str[] = Date.split("-");
@@ -52,27 +80,28 @@ public class Subject {
         this.kind = kind;
     }
 
-    public String getCurrentProgress() {
+    public int getCurrentProgress() {
         return currentProgress;
     }
 
-    public void setCurrentProgress(String currentProgress) {
+    public void setCurrentProgress(int currentProgress) {
         this.currentProgress = currentProgress;
     }
 
-    private String currentProgress;
+    private int currentProgress;
+
 
 
     public Subject(
 
-            String id,
+            int id,
             String name,
             String unitsName,
-            String unitsValue,
+            int unitsValue,
             String beginDate,
             String targetDate,
             String selectedDays,
-            String currentProgress
+            int currentProgress
          ) {
 
         this.id = id;
@@ -117,11 +146,11 @@ public class Subject {
         this.beginDate = beginDate;
     }
 
-    public String getUnitsValue() {
+    public int getUnitsValue() {
         return unitsValue;
     }
 
-    public void setUnitsValue(String unitsValue) {
+    public void setUnitsValue(int unitsValue) {
         this.unitsValue = unitsValue;
     }
 
@@ -133,11 +162,11 @@ public class Subject {
         this.unitsName = unitsName;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
