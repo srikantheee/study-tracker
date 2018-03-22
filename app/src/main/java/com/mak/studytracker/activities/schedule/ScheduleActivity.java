@@ -73,12 +73,12 @@ public class ScheduleActivity extends AppCompatActivity {
 // Setting dates
                 GregorianCalendar beginDate = new GregorianCalendar(
                         Subject.getYear(subject.getBeginDate()),
-                        Subject.getMonth(subject.getBeginDate()),
+                        Subject.getMonth(subject.getBeginDate())-1,
                         Subject.getDay(subject.getBeginDate())
                 );
                 GregorianCalendar targetDate = new GregorianCalendar(
                         Subject.getYear(subject.getTargetDate()),
-                        Subject.getMonth(subject.getTargetDate()),
+                        Subject.getMonth(subject.getTargetDate())-1,
                         Subject.getDay(subject.getTargetDate())
                 );
                 intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
